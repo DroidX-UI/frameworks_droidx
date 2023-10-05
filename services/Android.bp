@@ -1,0 +1,22 @@
+//
+// SPDX-FileCopyrightText: 2023 The LibreMobileOS Foundation
+// SPDX-FileCopyrightText: 2025 DroidX-UI
+// SPDX-License-Identifier: Apache-2.0
+//
+
+filegroup {
+    name: "services.droidx-sources",
+    srcs: ["java/**/*.java"],
+    path: "java",
+    visibility: ["//frameworks/base/services"],
+}
+
+java_library_static {
+    name: "services.droidx",
+    defaults: ["platform_service_defaults"],
+    srcs: [":services.droidx-sources"],
+    libs: ["services.core"],
+    static_libs: [
+        "framework-droidx.static",
+    ],
+}

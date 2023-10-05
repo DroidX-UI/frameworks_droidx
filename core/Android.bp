@@ -1,0 +1,32 @@
+//
+// SPDX-FileCopyrightText: 2023 The LibreMobileOS Foundation
+// SPDX-FileCopyrightText: 2024 DroidX-UI
+// SPDX-License-Identifier: Apache-2.0
+//
+
+filegroup {
+    name: "framework-droidx-sources",
+    srcs: [
+        "java/**/*.java",
+        "java/**/*.aidl",
+    ],
+    path: "java",
+    visibility: ["//frameworks/base"],
+}
+
+java_library_static {
+    name: "framework-droidx.static",
+    srcs: [":framework-droidx-sources"],
+}
+
+genrule {
+   name: "framework-droidx-res",
+   tools: ["soong_zip"],
+   srcs: [
+       "res/**/*"
+   ],
+   out: ["framework-droidx-res.zip"],
+   cmd: "INPUTS=($(in)) && "
+       + "RES_DIR=$$(dirname $$(dirname $${INPUTS[0]})) && "
+       + "$(location soong_zip) -o $(out) -C $$RES_DIR -D $$RES_DIR"
+}
