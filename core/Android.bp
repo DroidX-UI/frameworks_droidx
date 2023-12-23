@@ -14,9 +14,47 @@ filegroup {
     visibility: ["//frameworks/base"],
 }
 
+filegroup {
+    name: "framework-droidx.api.public.latest",
+    srcs: ["api/current.txt"],
+}
+
+filegroup {
+    name: "framework-droidx-removed.api.public.latest",
+    srcs: ["api/removed.txt"],
+}
+
+filegroup {
+    name: "framework-droidx-incompatibilities.api.public.latest",
+    srcs: ["api/test-current.txt"],
+}
+
+filegroup {
+    name: "framework-droidx.api.system.latest",
+    srcs: ["api/system-current.txt"],
+}
+
+filegroup {
+    name: "framework-droidx-removed.api.system.latest",
+    srcs: ["api/system-removed.txt"],
+}
+
+filegroup {
+    name: "framework-droidx-incompatibilities.api.system.latest",
+    srcs: ["api/test-current.txt"],
+}
+
 java_library_static {
     name: "framework-droidx.static",
     srcs: [":framework-droidx-sources"],
+}
+
+java_sdk_library {
+    name: "framework-droidx",
+    srcs: [":framework-droidx-sources"],
+
+    api_packages: ["framework-droidx"],
+    dist_group: "droidx",
 }
 
 genrule {
