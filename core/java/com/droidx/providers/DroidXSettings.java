@@ -33,6 +33,13 @@ public final class DroidXSettings {
     public static final class System extends Settings.NameValueTable {
         // region System Settings
 
+        /**
+         * Whether to enable taskbar.
+         * 
+         * @hide
+         */
+        public static final String ENABLE_TASKBAR = "enable_taskbar";
+
     }
 
     /**
