@@ -18,6 +18,8 @@ java_library_static {
     libs: ["services.core"],
     static_libs: [
         "framework-droidx.static",
+        "kotlinx_coroutines",
         "lmofreeform-server",
     ],
+    jarjar_rules: "jarjar-rules.txt",
 }
