@@ -55,6 +55,7 @@ java_sdk_library {
 
     api_packages: ["framework-droidx"],
     dist_group: "droidx",
+    system_ext_specific: true,
 }
 
 genrule {
