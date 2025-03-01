@@ -9,7 +9,6 @@
     <!-- Defines external services to be started by the DroidXSystemServer at boot. The service itself
          should publish as a binder services in its onStart -->
     <string-array name="config_externalDroidXServices">
-        <item>com.droidx.server.display.LMOFreeformSystemService</item>
     </string-array>
 
 </resources>
